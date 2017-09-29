@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="TNNewsDetails" representedClassName="TNNewsDetails" syncable="YES">
+        <attribute name="resultCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackingId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="payload" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TNNewsDeyailsPayload" inverseName="newsDetails" inverseEntity="TNNewsDeyailsPayload" syncable="YES"/>
+    </entity>
+    <entity name="TNNewsDeyailsPayload" representedClassName="TNNewsDeyailsPayload" syncable="YES">
+        <attribute name="bankInfoTypeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastModificationDate" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="typeId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newsDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TNNewsDetails" inverseName="payload" inverseEntity="TNNewsDetails" syncable="YES"/>
+        <relationship name="title" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TNNewsListPayload" inverseName="newsDetailsPayload" inverseEntity="TNNewsListPayload" syncable="YES"/>
+    </entity>
+    <entity name="TNNewsList" representedClassName="TNNewsList" syncable="YES">
+        <attribute name="resultCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackingId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="payload" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TNNewsListPayload" inverseName="newsList" inverseEntity="TNNewsListPayload" syncable="YES"/>
+    </entity>
+    <entity name="TNNewsListPayload" representedClassName="TNNewsListPayload" syncable="YES">
+        <attribute name="bankInfoTypeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publicationDate" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newsDetailsPayload" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TNNewsDeyailsPayload" inverseName="title" inverseEntity="TNNewsDeyailsPayload" syncable="YES"/>
+        <relationship name="newsList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TNNewsList" inverseName="payload" inverseEntity="TNNewsList" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TNNewsDetails" positionX="-351" positionY="-1" width="128" height="88"/>
+        <element name="TNNewsList" positionX="-704" positionY="-25" width="128" height="88"/>
+        <element name="TNNewsListPayload" positionX="-533" positionY="-99" width="128" height="148"/>
+        <element name="TNNewsDeyailsPayload" positionX="-549" positionY="140" width="128" height="148"/>
+    </elements>
+</model>
