@@ -11,10 +11,10 @@
 
 @implementation TNRouter
 
-- (void)showNewsDetailsFromSourceViewController:(UIViewController *)sourceViewController withNews:(TNNewsListPayload *)payload {
+- (void)showNewsDetailsFromSourceViewController:(UIViewController *)sourceViewController withNews:(NSString *)payloadId {
     UIStoryboard *aStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     TNNewsDetailsViewController *newsDetailsViewController = [aStoryboard instantiateViewControllerWithIdentifier:@"TNNewsDetailsViewController"];
-    newsDetailsViewController.newsId = payload.identifier;
+    newsDetailsViewController.newsId = payloadId;
     [self pushViewController:newsDetailsViewController fromSourceViewController:sourceViewController];
 }
 

@@ -12,6 +12,6 @@
 
 @interface TNRouter : NSObject
 // Navigate to news details page
-- (void)showNewsDetailsFromSourceViewController:(UIViewController *)sourceViewController withNews:(TNNewsListPayload *)payload;
+- (void)showNewsDetailsFromSourceViewController:(UIViewController *)sourceViewController withNews:(NSString *)payloadId;
 
 @end

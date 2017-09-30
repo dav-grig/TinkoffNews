@@ -97,8 +97,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    id item = self.listPayloads[indexPath.section];
-    [self.router showNewsDetailsFromSourceViewController:self withNews:item];
+    TNNewsListPayload *newsListPayload = self.listPayloads[indexPath.section];
+    [self.router showNewsDetailsFromSourceViewController:self withNews:newsListPayload.identifier];
 }
 
 - (void)refreshData:(UIRefreshControl *)refreshControl {
