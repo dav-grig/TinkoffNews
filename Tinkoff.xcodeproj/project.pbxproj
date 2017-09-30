@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0226FC9A1F7FA2CB00151E2D /* TNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0226FC991F7FA2CB00151E2D /* TNConstants.m */; };
 		02E302731F7ED241001DE7C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E302311F7ED241001DE7C4 /* AppDelegate.m */; };
 		02E302741F7ED241001DE7C4 /* TNCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E302351F7ED241001DE7C4 /* TNCoreDataService.m */; };
 		02E302751F7ED241001DE7C4 /* TNNewsDetailsMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E302391F7ED241001DE7C4 /* TNNewsDetailsMapping.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0226FC981F7FA2CB00151E2D /* TNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNConstants.h; sourceTree = "<group>"; };
+		0226FC991F7FA2CB00151E2D /* TNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNConstants.m; sourceTree = "<group>"; };
 		02D3C2891F7ED1F80064968D /* Tinkoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinkoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E302301F7ED241001DE7C4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02E302311F7ED241001DE7C4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,13 +93,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0226FC971F7FA2B100151E2D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0226FC981F7FA2CB00151E2D /* TNConstants.h */,
+				0226FC991F7FA2CB00151E2D /* TNConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		02D3C2801F7ED1F80064968D = {
 			isa = PBXGroup;
 			children = (
 				02D3C28B1F7ED1F80064968D /* Tinkoff */,
-				02E3022D1F7ED241001DE7C4 /* Classes */,
-				02E3026E1F7ED241001DE7C4 /* Resources */,
-				02E302701F7ED241001DE7C4 /* Supporting Files */,
 				02D3C28A1F7ED1F80064968D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +121,9 @@
 		02D3C28B1F7ED1F80064968D /* Tinkoff */ = {
 			isa = PBXGroup;
 			children = (
+				02E3022D1F7ED241001DE7C4 /* Classes */,
+				02E3026E1F7ED241001DE7C4 /* Resources */,
+				02E302701F7ED241001DE7C4 /* Supporting Files */,
 			);
 			path = Tinkoff;
 			sourceTree = "<group>";
@@ -122,11 +134,11 @@
 				02E3022E1F7ED241001DE7C4 /* Application Layer */,
 				02E302321F7ED241001DE7C4 /* CoreData Layer */,
 				02E302541F7ED241001DE7C4 /* Presentation Layer */,
-				02E302641F7ED241001DE7C4 /* Router Layer */,
 				02E302671F7ED241001DE7C4 /* Services */,
+				02E302641F7ED241001DE7C4 /* Router Layer */,
+				0226FC971F7FA2B100151E2D /* Constants */,
 			);
-			name = Classes;
-			path = Tinkoff/Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		02E3022E1F7ED241001DE7C4 /* Application Layer */ = {
@@ -344,8 +356,7 @@
 			children = (
 				02E3026F1F7ED241001DE7C4 /* Assets.xcassets */,
 			);
-			name = Resources;
-			path = Tinkoff/Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		02E302701F7ED241001DE7C4 /* Supporting Files */ = {
@@ -354,8 +365,7 @@
 				02E302711F7ED241001DE7C4 /* Info.plist */,
 				02E302721F7ED241001DE7C4 /* main.m */,
 			);
-			name = "Supporting Files";
-			path = "Tinkoff/Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +461,7 @@
 				02E302771F7ED241001DE7C4 /* TNNewsDetails+CoreDataClass.m in Sources */,
 				02E302731F7ED241001DE7C4 /* AppDelegate.m in Sources */,
 				02E302841F7ED241001DE7C4 /* TNNewsListViewController.m in Sources */,
+				0226FC9A1F7FA2CB00151E2D /* TNConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,11 @@
 #import "TNNewsListService.h"
 #import "TNNewsListMapping.h"
 #import "TNCoreDataService.h"
+#import "TNConstants.h"
 
 
 #import "TNNewsList+CoreDataClass.h"
 #import "TNNewsListPayload+CoreDataClass.h"
-
-NSString *TNNewsListEntity = @"TNNewsList";
-NSString *TNNewsListPayloadEntity = @"TNNewsListPayload";
 
 @interface TNNewsListService()
 
@@ -63,7 +61,7 @@ NSString *TNNewsListPayloadEntity = @"TNNewsListPayload";
     
     NSManagedObjectContext *context = self.coreDataService.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:TNNewsListPayloadEntity  inManagedObjectContext: context];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kTNNewsListPayload  inManagedObjectContext: context];
     [fetchRequest setEntity:entityDescription];
     fetchRequest.fetchOffset = offset;
     fetchRequest.fetchLimit = 50;
@@ -82,7 +80,8 @@ NSString *TNNewsListPayloadEntity = @"TNNewsListPayload";
 - (void)requestToApiWithCompletionBlock:(TNServiceCompletionResponseBlock)completionBlock {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"GET"];
-    [request setURL:[NSURL URLWithString:@"https://api.tinkoff.ru/v1/news"]];
+    NSString *urlString = [NSString stringWithFormat:@"%@news",kTNAPIBaseUrl];
+    [request setURL:[NSURL URLWithString:urlString]];
     request.timeoutInterval = 20.0;
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

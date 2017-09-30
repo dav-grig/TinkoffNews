@@ -7,11 +7,7 @@
 //
 
 #import "TNCoreDataService.h"
-
-NSString *TNewsList = @"TNNewsList";
-NSString *TNNewsListPayload = @"TNNewsListPayload";
-NSString *TNNewsDetailsPayload = @"TNNewsDeyailsPayload";
-NSString *TNNewsDetails = @"TNNewsDetails";
+#import "TNConstants.h"
 
 @interface TNCoreDataService()
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -162,10 +158,10 @@ NSString *TNNewsDetails = @"TNNewsDetails";
 }
 
 - (void)deleteAllEntities {
-    [self deleteEntity:TNewsList];
-    [self deleteEntity:TNNewsListPayload];
-    [self deleteEntity:TNNewsDetailsPayload];
-    [self deleteEntity:TNNewsDetails];
+    [self deleteEntity:kTNewsList];
+    [self deleteEntity:kTNNewsListPayload];
+    [self deleteEntity:kTNNewsDetailsPayload];
+    [self deleteEntity:kTNNewsDetails];
 }
 
 @end

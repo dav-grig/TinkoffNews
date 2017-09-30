@@ -10,9 +10,7 @@
 #import "TNNewsDeyailsPayload+CoreDataClass.h"
 #import "TNCoreDataService.h"
 #import "TNNewsDetailsMapping.h"
-
-NSString *TNNewsDetailsPayloadEntity = @"TNNewsDeyailsPayload";
-NSString *TNNewsDetailsEntity = @"TNNewsDetails";
+#import "TNConstants.h"
 
 @interface TNNewsDetailService ()
 @property (strong, nonatomic) TNCoreDataService *coreDataService;
@@ -76,7 +74,7 @@ NSString *TNNewsDetailsEntity = @"TNNewsDetails";
     
     NSManagedObjectContext *context = self.coreDataService.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:TNNewsDetailsPayloadEntity  inManagedObjectContext: context];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kTNNewsDetailsPayload  inManagedObjectContext: context];
     [fetchRequest setEntity:entityDescription];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"title.identifier like %@",newsId];
     
@@ -94,7 +92,7 @@ NSString *TNNewsDetailsEntity = @"TNNewsDetails";
 - (void)requestToApiWithNewsId:(NSString *)newsId WithCompletionBlock:(TNNewsDetailsServiceCompletionResponseBlock)completionBlock {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"GET"];
-    NSString *urlString = [NSString stringWithFormat:@"https://api.tinkoff.ru/v1/news_content?id=%@",newsId];
+    NSString *urlString = [NSString stringWithFormat:@"%@news_content?id=%@",kTNAPIBaseUrl,newsId];
     [request setURL:[NSURL URLWithString:urlString]];
     request.timeoutInterval = 20.0;
     
