@@ -65,10 +65,9 @@
     typeof(self) __weak weakSelf = self;
     [self.newsDetailService obtainNewsListWithNewsId:self.newsId WithCompletionBlock:^(id result) {
         NSString *contentString = result;
-        contentString = [self removeHtmlCharacters:contentString];
-        NSLog(@"content string - %@",contentString);
+        contentString = [weakSelf removeHtmlCharacters:contentString];
             dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.newsTextView.text = contentString;
+                self.newsTextView.text = contentString;
             });
     }];
 }

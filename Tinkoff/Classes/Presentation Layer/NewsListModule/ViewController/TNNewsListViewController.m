@@ -116,11 +116,11 @@
         [weakSelf.listPayloads removeAllObjects];
         weakSelf.listPayloads = result;
         if (weakSelf.listPayloads.count) {
-            _isFirstLoad = NO;
-            _isUpdating = NO;
+            weakSelf.isFirstLoad = NO;
+            weakSelf.isUpdating = NO;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.activityIndicator stopAnimating];
-            [self.tableView reloadData];
+            [weakSelf.activityIndicator stopAnimating];
+            [weakSelf.tableView reloadData];
         });
         }
     }];
