@@ -21,7 +21,7 @@
 - (void)obtainNewsListWithNewsId:(NSString *)newsId WithCompletionBlock:(TNNewsDetailsServiceCompletionBlock)completionBlock {
     typeof(self) __weak weakSelf = self;
     __block NSString *content;
-    __block TNNewsDeyailsPayload *newsDetailsPayload = [TNNewsDeyailsPayload new];
+    __block TNNewsDeyailsPayload *newsDetailsPayload = [[TNNewsDeyailsPayload alloc] initWithContext];
     // Fetch data from Local DB
     [self fetchNewsDetailsfromLocalDbWithId:newsId
                         WithCompletionBlock:^(id result) {
