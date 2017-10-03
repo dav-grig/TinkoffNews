@@ -142,8 +142,8 @@
        weakSelf.isUpdating = NO;
        weakSelf.isEnd = ![result count];
     dispatch_async(dispatch_get_main_queue(), ^{
-       [self.activityIndicator stopAnimating];
-       [self.tableView reloadData];
+       [weakSelf.activityIndicator stopAnimating];
+       [weakSelf.tableView reloadData];
     });
    }];
 }

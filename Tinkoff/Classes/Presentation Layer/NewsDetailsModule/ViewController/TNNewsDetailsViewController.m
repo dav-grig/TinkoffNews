@@ -67,7 +67,7 @@
         NSString *contentString = result;
         contentString = [weakSelf removeHtmlCharacters:contentString];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.newsTextView.text = contentString;
+                weakSelf.newsTextView.text = contentString;
             });
     }];
 }
