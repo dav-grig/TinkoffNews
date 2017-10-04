@@ -13,6 +13,7 @@
 @interface TNNewsDetailsViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *newsTextView;
 @property (strong, nonatomic) TNNewsDetailService *newsDetailService;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -62,12 +63,14 @@
 #pragma mark - Services
 
 - (void)loadServiceData {
+    [self.activityIndicator startAnimating];
     typeof(self) __weak weakSelf = self;
     [self.newsDetailService obtainNewsListWithNewsId:self.newsId WithCompletionBlock:^(id result) {
         NSString *contentString = result;
         contentString = [weakSelf removeHtmlCharacters:contentString];
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.newsTextView.text = contentString;
+                [weakSelf.activityIndicator stopAnimating];
             });
     }];
 }

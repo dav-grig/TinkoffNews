@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZET-h7-HhY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZET-h7-HhY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,7 +52,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CtR-f3-maL">
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CtR-f3-maL">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
@@ -96,16 +96,23 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-cp-Tfe">
+                                <rect key="frame" x="174" y="313" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2kc-cp-Tfe" firstAttribute="centerX" secondItem="9Co-L5-Ayt" secondAttribute="centerX" id="0oa-Ry-Z45"/>
                             <constraint firstItem="9Co-L5-Ayt" firstAttribute="leading" secondItem="Lm9-Tn-Mg9" secondAttribute="leading" constant="15" id="D5j-PN-Gos"/>
+                            <constraint firstItem="2kc-cp-Tfe" firstAttribute="centerY" secondItem="9Co-L5-Ayt" secondAttribute="centerY" id="IlZ-Wz-2of"/>
                             <constraint firstAttribute="trailing" secondItem="9Co-L5-Ayt" secondAttribute="trailing" constant="5" id="Onq-H3-cQl"/>
                             <constraint firstItem="2yX-Ry-ebE" firstAttribute="top" secondItem="9Co-L5-Ayt" secondAttribute="bottom" constant="15" id="d0J-Ke-3RM"/>
                             <constraint firstItem="9Co-L5-Ayt" firstAttribute="top" secondItem="Lm9-Tn-Mg9" secondAttribute="top" constant="10" id="zDe-hf-bFc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="2kc-cp-Tfe" id="4ma-Xf-itg"/>
                         <outlet property="newsTextView" destination="9Co-L5-Ayt" id="q8G-1c-L8C"/>
                     </connections>
                 </viewController>
