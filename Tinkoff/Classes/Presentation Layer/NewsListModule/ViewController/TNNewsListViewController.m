@@ -69,7 +69,7 @@
     TNNewsListPayload *payload = self.listPayloads[indexPath.section];
     
     TNNewsListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TNNewsListTableViewCell className]];
-    cell.layer.cornerRadius = 3;
+    cell.layer.cornerRadius = 10;
     [cell.cellWebView loadHTMLString:payload.text baseURL:nil];
     return cell;
 }
@@ -87,7 +87,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10;
+    return 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {

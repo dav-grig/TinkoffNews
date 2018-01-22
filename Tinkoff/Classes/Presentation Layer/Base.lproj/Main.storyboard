@@ -22,14 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lk4-eS-x1R">
-                                <rect key="frame" x="10" y="0.0" width="355" height="667"/>
+                                <rect key="frame" x="15" y="0.0" width="345" height="667"/>
                                 <color key="backgroundColor" red="0.49045141539999998" green="0.662978073" blue="0.38841998579999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TNNewsListTableViewCell" id="7QK-EG-5e5" customClass="TNNewsListTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="345" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7QK-EG-5e5" id="UxQ-Nw-m8P">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <webView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tU8-yz-daX">
@@ -38,7 +38,7 @@
                                                 </webView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="tU8-yz-daX" firstAttribute="width" secondItem="UxQ-Nw-m8P" secondAttribute="width" id="TFv-a6-Exo"/>
+                                                <constraint firstItem="tU8-yz-daX" firstAttribute="width" secondItem="UxQ-Nw-m8P" secondAttribute="width" id="O69-Gc-nMa"/>
                                                 <constraint firstItem="tU8-yz-daX" firstAttribute="height" secondItem="UxQ-Nw-m8P" secondAttribute="height" id="Wnf-ox-bj4"/>
                                                 <constraint firstItem="tU8-yz-daX" firstAttribute="centerY" secondItem="UxQ-Nw-m8P" secondAttribute="centerY" id="ZET-PB-WAm"/>
                                                 <constraint firstItem="tU8-yz-daX" firstAttribute="centerX" secondItem="UxQ-Nw-m8P" secondAttribute="centerX" id="ZFh-r8-Shb"/>
@@ -58,11 +58,11 @@
                         <color key="backgroundColor" red="0.49045141535833331" green="0.66297807295833322" blue="0.38841998579999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CtR-f3-maL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6GE-qo-a3W"/>
-                            <constraint firstItem="Lk4-eS-x1R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="FiO-F9-wtj"/>
+                            <constraint firstItem="Lk4-eS-x1R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="FiO-F9-wtj"/>
                             <constraint firstItem="CtR-f3-maL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NdN-w8-xhV"/>
                             <constraint firstItem="Lk4-eS-x1R" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bne-F1-7fD"/>
                             <constraint firstItem="Lk4-eS-x1R" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dCk-1n-q5j"/>
-                            <constraint firstAttribute="trailing" secondItem="Lk4-eS-x1R" secondAttribute="trailing" constant="10" id="pL7-A4-2GS"/>
+                            <constraint firstAttribute="trailing" secondItem="Lk4-eS-x1R" secondAttribute="trailing" constant="15" id="pL7-A4-2GS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Тинькофф новости" id="HnP-ms-9TK"/>
@@ -93,7 +93,6 @@
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="2kc-cp-Tfe" id="4ma-Xf-itg"/>

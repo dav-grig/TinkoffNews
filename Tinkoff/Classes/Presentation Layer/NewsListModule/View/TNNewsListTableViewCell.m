@@ -24,7 +24,7 @@
 }
 
 + (CGFloat)cellRowHeight {
-    return 100;
+    return 150;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
