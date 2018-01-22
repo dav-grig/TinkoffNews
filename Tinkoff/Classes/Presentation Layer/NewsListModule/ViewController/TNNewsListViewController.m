@@ -70,7 +70,7 @@
     
     TNNewsListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TNNewsListTableViewCell className]];
     cell.layer.cornerRadius = 3;
-    [cell configureNewsWith:payload.text];
+    [cell.cellWebView loadHTMLString:payload.text baseURL:nil];
     return cell;
 }
 
@@ -83,7 +83,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
+    return [TNNewsListTableViewCell cellRowHeight];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -91,7 +91,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-     return UITableViewAutomaticDimension;
+    return [TNNewsListTableViewCell cellRowHeight];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

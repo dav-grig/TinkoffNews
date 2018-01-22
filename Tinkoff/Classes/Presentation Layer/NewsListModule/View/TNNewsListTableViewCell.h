@@ -10,7 +10,9 @@
 
 @interface TNNewsListTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIWebView *cellWebView;
+
 + (NSString *)className;
 
-- (void)configureNewsWith:(NSString *)newsText;
++ (CGFloat)cellRowHeight;
 @end

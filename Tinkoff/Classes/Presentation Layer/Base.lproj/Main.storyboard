@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZET-h7-HhY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZET-h7-HhY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,22 +32,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lu-KH-hvb">
-                                                    <rect key="frame" x="15" y="10" width="330" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <webView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tU8-yz-daX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </webView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0lu-KH-hvb" firstAttribute="top" secondItem="UxQ-Nw-m8P" secondAttribute="top" constant="10" id="Tcx-dS-yhK"/>
-                                                <constraint firstAttribute="trailing" secondItem="0lu-KH-hvb" secondAttribute="trailing" constant="10" id="VYg-Dg-zhD"/>
-                                                <constraint firstAttribute="bottom" secondItem="0lu-KH-hvb" secondAttribute="bottom" constant="10" id="Xdt-o3-GML"/>
-                                                <constraint firstItem="0lu-KH-hvb" firstAttribute="leading" secondItem="UxQ-Nw-m8P" secondAttribute="leading" constant="15" id="YWZ-Xa-Jb2"/>
+                                                <constraint firstItem="tU8-yz-daX" firstAttribute="width" secondItem="UxQ-Nw-m8P" secondAttribute="width" id="TFv-a6-Exo"/>
+                                                <constraint firstItem="tU8-yz-daX" firstAttribute="height" secondItem="UxQ-Nw-m8P" secondAttribute="height" id="Wnf-ox-bj4"/>
+                                                <constraint firstItem="tU8-yz-daX" firstAttribute="centerY" secondItem="UxQ-Nw-m8P" secondAttribute="centerY" id="ZET-PB-WAm"/>
+                                                <constraint firstItem="tU8-yz-daX" firstAttribute="centerX" secondItem="UxQ-Nw-m8P" secondAttribute="centerX" id="ZFh-r8-Shb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="newslabel" destination="0lu-KH-hvb" id="e2y-th-JPB"/>
+                                            <outlet property="cellWebView" destination="tU8-yz-daX" id="vBA-se-f0F"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -89,31 +87,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Co-L5-Ayt">
-                                <rect key="frame" x="15" y="10" width="355" height="642"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                            </textView>
-                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-cp-Tfe">
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-cp-Tfe">
                                 <rect key="frame" x="174" y="313" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2kc-cp-Tfe" firstAttribute="centerX" secondItem="9Co-L5-Ayt" secondAttribute="centerX" id="0oa-Ry-Z45"/>
-                            <constraint firstItem="9Co-L5-Ayt" firstAttribute="leading" secondItem="Lm9-Tn-Mg9" secondAttribute="leading" constant="15" id="D5j-PN-Gos"/>
-                            <constraint firstItem="2kc-cp-Tfe" firstAttribute="centerY" secondItem="9Co-L5-Ayt" secondAttribute="centerY" id="IlZ-Wz-2of"/>
-                            <constraint firstAttribute="trailing" secondItem="9Co-L5-Ayt" secondAttribute="trailing" constant="5" id="Onq-H3-cQl"/>
-                            <constraint firstItem="2yX-Ry-ebE" firstAttribute="top" secondItem="9Co-L5-Ayt" secondAttribute="bottom" constant="15" id="d0J-Ke-3RM"/>
-                            <constraint firstItem="9Co-L5-Ayt" firstAttribute="top" secondItem="Lm9-Tn-Mg9" secondAttribute="top" constant="10" id="zDe-hf-bFc"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="2kc-cp-Tfe" id="4ma-Xf-itg"/>
-                        <outlet property="newsTextView" destination="9Co-L5-Ayt" id="q8G-1c-L8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElB-GG-i3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
